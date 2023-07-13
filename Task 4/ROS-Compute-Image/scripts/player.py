@@ -31,26 +31,6 @@ def strategy():
 			pass
 		imgMsg=imgMsg.astype(int)
 		print(imgMsg)
-		'''for i in range(imheight):
-			for j in range(imwidth):
-				if(imgMsg[i,j,g]==0):
-					track[i,j,0]=guess[i,j,r]
-					guess[i,j,r]=int((track[i,j,0]+track[i,j,1])/2)
-				elif(imgMsg[i,j,g]==255):
-					track[i,j,1]=guess[i,j,r]
-					guess[i,j,r]=int((track[i,j,0]+track[i,j,1])/2)
-				if(imgMsg[i,j,b]==0):
-					track[i,j,2]=guess[i,j,g]
-					guess[i,j,g]=int((track[i,j,2]+track[i,j,3])/2)
-				elif(imgMsg[i,j,b]==255):
-					track[i,j,3]=guess[i,j,g]
-					guess[i,j,g]=int((track[i,j,2]+track[i,j,3])/2)
-				if(imgMsg[i,j,r]==0):
-					track[i,j,4]=guess[i,j,b]
-					guess[i,j,b]=int((track[i,j,4]+track[i,j,5])/2)
-				elif(imgMsg[i,j,r]==255):
-					track[i,j,5]=guess[i,j,b]
-					guess[i,j,b]=int((track[i,j,4]+track[i,j,5])/2)'''
 		g0=np.where(imgMsg[:,:,g]==0)
 		g1=np.where(imgMsg[:,:,g]==255)
 		b0=np.where(imgMsg[:,:,b]==0)
@@ -83,9 +63,6 @@ def strategy():
 		while imgMsg is None:
 			pass	
 		rospy.sleep(0.2)
-				
-					
-	
 	
 			
 def guessCallback(data):
